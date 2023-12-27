@@ -9,7 +9,7 @@ export default function Home() {
       <p className={styles.text}>
         Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.
       </p>
-      <a href="#" className="button button_orange">
+      <a href="#" className="btn btn_orange">
         Find your van
       </a>
     </div>
