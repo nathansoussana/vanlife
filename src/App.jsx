@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 
-function App() {
+export default function App() {
   return (
     <div className="global_container">
       <BrowserRouter>
@@ -18,5 +18,3 @@ function App() {
     </div>
   )
 }
-
-export default App

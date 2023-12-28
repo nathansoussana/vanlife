@@ -4,6 +4,7 @@ $font-color-light-grey: #AAA
 $background-color-light: #FFF7ED
 $background-color-dark: #252525
 $orange: #FF8C38
+$orange-light: #FFCC8D
   
 *
   margin: 0
@@ -27,19 +28,36 @@ h1
   font-weight: 800
   line-height: 42px
 
-ul
-  list-style: none
+h2
+  font-size: 32px
+  font-weight: 700
+  line-height: 38px
+
+h3
+  font-size: 24px
+  font-weight: 700
+  line-height: 30px
 
 a
   text-decoration: none
+
+img
+  max-width: 100%
 
 .btn
   display: flex
   justify-content: center
   align-items: center
-  height: 50px
+  padding: 12px 22px
+  border: none
   border-radius: 5px
+  color: #fff
+
+.btn_small
+  display: inline-block
 
 .btn_orange
   background: $orange
-  color: #fff
+
+.btn_black
+  background: $font-color-dark

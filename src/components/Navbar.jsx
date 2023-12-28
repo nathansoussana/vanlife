@@ -11,7 +11,7 @@ export default function Navbar() {
           <Link to="/about" className={styles.menu_item}>
             About
           </Link>
-          <Link to="#" className={styles.menu_item}>
+          <Link to="/vans" className={styles.menu_item}>
             Vans
           </Link>     
       </div>

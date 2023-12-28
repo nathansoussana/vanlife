@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Home.module.sass'
 
 export default function Home() {
@@ -9,9 +10,9 @@ export default function Home() {
       <p className={styles.text}>
         Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.
       </p>
-      <a href="#" className="btn btn_orange">
+      <Link to="/vans" className="btn btn_orange">
         Find your van
-      </a>
+      </Link>
     </div>
   )
 }
