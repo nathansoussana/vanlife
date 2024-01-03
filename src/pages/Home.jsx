@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Button from '../components/Button'
 import styles from './Home.module.sass'
 
 export default function Home() {
@@ -10,9 +10,11 @@ export default function Home() {
       <p className={styles.text}>
         Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.
       </p>
-      <Link to="/vans" className="btn btn_orange">
-        Find your van
-      </Link>
+      <Button 
+        backgroundColor="orange" 
+        url="/vans" 
+        text="Find your van"
+      />
     </div>
   )
 }
