@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Tag from '../components/Tag'
+import Tag from '../../components/ui-elements/Tag'
 import styles from './Vans.module.sass'
 
 export default function Vans() {

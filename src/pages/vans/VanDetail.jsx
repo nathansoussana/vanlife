@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import Tag from '../components/Tag'
-import Button from '../components/Button'
+import Tag from '../../components/ui-elements/Tag'
+import Button from '../../components/ui-elements/Button'
 import styles from './VanDetail.module.sass'
 
 export default function VanDetail() {

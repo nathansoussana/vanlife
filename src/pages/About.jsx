@@ -1,4 +1,4 @@
-import Button from '../components/Button'
+import Button from '../components/ui-elements/Button'
 import styles from './About.module.sass'
 
 export default function About() {
