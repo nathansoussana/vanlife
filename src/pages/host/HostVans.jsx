@@ -12,24 +12,13 @@ export default function HostVans() {
   }, [])
 
   const vansList = vansData.map(van =>
-    <li 
-      key={van.id} 
-      className={styles.van_item}
-    >
+    <li key={van.id} className={styles.van_item}>
       <Link to={`${van.id}`}>
         <div className={styles.van_item_content}>
-          <img 
-            src={van.imageUrl} 
-            alt={van.name} 
-            className={styles.van_img} 
-          />
+          <img src={van.imageUrl} alt={van.name} className={styles.van_img} />
           <div className={styles.van_text}>
-            <h4 className={styles.van_title}>
-              {van.name}
-            </h4>
-            <p className={styles.van_price}>
-              ${van.price}/day
-            </p>
+            <h4 className={styles.van_title}>{van.name}</h4>
+            <p className={styles.van_price}>${van.price}/day</p>
           </div>
         </div>
       </Link>
@@ -38,12 +27,8 @@ export default function HostVans() {
 
   return (
     <div className="container">
-      <h2 className={styles.header}>
-        Your Listed Vans
-      </h2>
-      <ul className={styles.vans_list}>
-        {vansList}
-      </ul>
+      <h2 className={styles.header}>Your Listed Vans</h2>
+      <ul className={styles.vans_list}>{vansList}</ul>
     </div>
   )
 }

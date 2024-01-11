@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link, NavLink, Outlet } from "react-router-dom"
 import Tag from '../../components/ui-elements/Tag'
-import styles from './HostVanDetail.module.sass'
+import styles from './HostVanDetails.module.sass'
 
 export default function HostVanDetail() {
   const [van, setVan] = useState(null)
@@ -19,11 +19,14 @@ export default function HostVanDetail() {
 
   return (
     <div className="container">
+      
+      {/* Back to all vans */}
       <Link to=".." relative="path">
         <span className={styles.back_arrow}>&larr;</span>
         <span className={styles.back_link}>Back to all vans</span>
       </Link>
 
+      {/* Van banner info */}
       <div className={styles.van_container}>
         { van && (
           <div className={styles.van_key_info}>
@@ -38,13 +41,16 @@ export default function HostVanDetail() {
           </div>
         )}
 
+        {/* Van sub-menu */}
         <nav className={styles.menu}>
           <NavLink to="." end className={active}>Details</NavLink>
           <NavLink to="pricing" className={active}>Pricing</NavLink>
           <NavLink to="photos" className={active}>Photos</NavLink>  
         </nav>
-
+        
+        {/* Outlet */}
         <Outlet />
+        
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 export default function Income() {
   return (
     <div className="container">
-      <h1>Income</h1>
+      <h2>Income</h2>
     </div>
   )
 }

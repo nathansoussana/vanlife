@@ -19,26 +19,12 @@ export default function VanDetail() {
         { 
           van && (
             <div className={styles.content_container}>
-              <img 
-                className={styles.van_img}
-                src={van.imageUrl} 
-                alt={van.name} 
-              />
+              <img className={styles.van_img} src={van.imageUrl} alt={van.name} />
               <Tag name={van.type} />
-              <h2 className={styles.van_name}>
-                {van.name}
-              </h2>
-              <h3 className={styles.van_price}>
-                ${van.price}<span>/day</span>
-              </h3>
-              <p className={styles.van_description}>
-                {van.description}
-              </p>
-              <Button 
-                backgroundColor="orange" 
-                url="#" 
-                text="Rent this van"
-              />
+              <h2 className={styles.van_name}>{van.name}</h2>
+              <h3 className={styles.van_price}>${van.price}<span>/day</span></h3>
+              <p className={styles.van_description}>{van.description}</p>
+              <Button backgroundColor="orange" url="#" text="Rent this van"/>
             </div>
           )
         }

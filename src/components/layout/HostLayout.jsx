@@ -12,21 +12,18 @@ export default function HostLayout() {
 
   return (
     <div className={styles.container}>
+
+      {/* Menu */}
       <nav className={styles.menu}>
-        <NavLink to="." end className={active}>
-          Dashboard
-        </NavLink>
-        <NavLink to="income" className={active}>
-          Income
-        </NavLink>
-        <NavLink to="vans" className={active}>
-          Vans
-        </NavLink>
-        <NavLink to="reviews" className={active}>
-          Reviews
-        </NavLink>     
+        <NavLink to="." end className={active}>Dashboard</NavLink>
+        <NavLink to="income" className={active}>Income</NavLink>
+        <NavLink to="vans" className={active}>Vans</NavLink>
+        <NavLink to="reviews" className={active}>Reviews</NavLink>     
       </nav>
+
+      {/* Outlet */}
       <Outlet />
+      
     </div>
   )
 }
