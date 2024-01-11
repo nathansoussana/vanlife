@@ -17,13 +17,13 @@ export default function Navbar() {
       </Link>
 
       <div className={styles.navigation_menu}>
-        <NavLink to="/host" className={active}>
+        <NavLink to="host" className={active}>
           Host
         </NavLink>
-        <NavLink to="/about" className={active}>
+        <NavLink to="about" className={active}>
           About
         </NavLink>
-        <NavLink to="/vans" className={active}>
+        <NavLink to="vans" className={active}>
           Vans
         </NavLink>     
       </div>

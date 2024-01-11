@@ -13,16 +13,16 @@ export default function HostLayout() {
   return (
     <div className={styles.container}>
       <nav className={styles.menu}>
-        <NavLink to="/host" end className={active}>
+        <NavLink to="." end className={active}>
           Dashboard
         </NavLink>
-        <NavLink to="/host/income" className={active}>
+        <NavLink to="income" className={active}>
           Income
         </NavLink>
-        <NavLink to="/host/vans" className={active}>
+        <NavLink to="vans" className={active}>
           Vans
         </NavLink>
-        <NavLink to="/host/reviews" className={active}>
+        <NavLink to="reviews" className={active}>
           Reviews
         </NavLink>     
       </nav>
