@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link, NavLink, Outlet } from "react-router-dom"
+import { useParams, Link, NavLink, Outlet } from 'react-router-dom'
 import Tag from '../../components/ui-elements/Tag'
 import styles from './HostVanDetails.module.sass'
 
@@ -30,7 +30,7 @@ export default function HostVanDetail() {
       <div className={styles.van_container}>
         { van && (
           <div className={styles.van_key_info}>
-            <img className={styles.van_img} src={van.imageUrl} alt="" />
+            <img className={styles.van_img} src={van.imageUrl} alt={van.name} />
             <div className={styles.van_key_text}>
               <Tag name="simple" />
               <h3 className={styles.van_name}>{van.name}</h3>
@@ -49,8 +49,8 @@ export default function HostVanDetail() {
         </nav>
         
         {/* Outlet */}
-        <Outlet />
-        
+        <Outlet context={[van, setVan]} />
+  
       </div>
     </div>
   )
