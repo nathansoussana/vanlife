@@ -1,22 +1,31 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import styles from './Navbar.module.sass'
 
 export default function Navbar() {
+  const active = ({isActive}) => {
+    return (
+      isActive ? 
+      styles.menu_item_active : 
+      styles.menu_item
+    )
+  }
+
   return (
     <nav className={styles.content_container}>
       <Link to="/" className={styles.logo}>
         #VANLIFE
       </Link>
+
       <div className={styles.navigation_menu}>
-        <Link to="/host" className={styles.menu_item}>
+        <NavLink to="/host" className={active}>
           Host
-        </Link>
-        <Link to="/about" className={styles.menu_item}>
+        </NavLink>
+        <NavLink to="/about" className={active}>
           About
-        </Link>
-        <Link to="/vans" className={styles.menu_item}>
+        </NavLink>
+        <NavLink to="/vans" className={active}>
           Vans
-        </Link>     
+        </NavLink>     
       </div>
     </nav> 
   )
