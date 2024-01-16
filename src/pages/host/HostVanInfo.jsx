@@ -2,7 +2,7 @@ import { useOutletContext } from 'react-router-dom'
 import styles from './HostVanInfo.module.sass'
 
 export default function HostVanInfo() {
-  const [van, setVan] = useOutletContext()
+  const { van } = useOutletContext()
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function HostVanInfo() {
             <span className={styles.subtitle}>Visibility:</span> Public
           </p>
         </div>
-      ) }
+      )}
     </>
   )
 }

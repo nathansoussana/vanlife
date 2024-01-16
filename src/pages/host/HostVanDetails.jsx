@@ -49,7 +49,7 @@ export default function HostVanDetail() {
         </nav>
         
         {/* Outlet */}
-        <Outlet context={[van, setVan]} />
+        <Outlet context={{van}} />
   
       </div>
     </div>

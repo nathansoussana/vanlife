@@ -1,5 +1,32 @@
+@use '../../main'
+
+$font-color-tag-beige: #FFEAD0
+  
 .content_container
   padding: 54px 27px 83px
+
+.filters
+  margin: 22px 0 56px
+  display: flex
+  gap: 20px
+  align-items: center
+
+.filter
+  width: 104px
+  height: 37px
+  border-radius: 5px
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+  background: $font-color-tag-beige
+  color: main.$font-color-dark-grey
+  cursor: pointer
+
+.clear
+  color: main.$font-color-dark-grey
+  text-decoration: underline
+  cursor: pointer
 
 .vans_list
   display: grid

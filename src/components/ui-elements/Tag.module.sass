@@ -1,4 +1,6 @@
-$font-color-tag-selected: #FFEAD0
+@use '../../main'
+  
+$font-color-tag-beige: #FFEAD0
 $background-color-tag-simple: #E17654
 $background-color-tag-rugged: #115E59
 $background-color-tag-luxury: #161616
@@ -11,15 +13,17 @@ $background-color-tag-luxury: #161616
   justify-content: center
   align-items: center
   flex-wrap: wrap
+  background: $font-color-tag-beige
+  color: main.$font-color-dark-grey
 
 .simple
-  color: $font-color-tag-selected
+  color: $font-color-tag-beige
   background: $background-color-tag-simple 
 
 .luxury
-  color: $font-color-tag-selected
+  color: $font-color-tag-beige
   background: $background-color-tag-luxury
 
 .rugged
-  color: $font-color-tag-selected
+  color: $font-color-tag-beige
   background: $background-color-tag-rugged
