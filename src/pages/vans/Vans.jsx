@@ -20,7 +20,7 @@ export default function Vans() {
 
   const vansList = vansDataFiltered.map(van =>
       <li key={van.id} className={styles.van_item}>
-        <Link to={`/vans/${van.id}`}>
+        <Link to={van.id}>
           <img src={van.imageUrl} alt={van.name} className={styles.van_img} />
           <h5 className={styles.van_name}>{van.name}</h5>
           <p className={styles.van_price}>${van.price}/day</p>
@@ -29,14 +29,18 @@ export default function Vans() {
       </li>
   )
 
+  function filterClassName(vanType) { 
+    return `${styles.filter} ${typeFilter === vanType ? tagStyles[vanType] : null}`
+  }
+
   return (
     <div className={styles.content_container}>
       <h2 className={styles.header}>Explore our van options</h2>
       <div className={styles.filters}>
-        <div onClick={() => setSearchParams({type: "simple"})} className={styles.filter}>simple</div>
-        <div onClick={() => setSearchParams({type: "luxury"})} className={styles.filter}>luxury</div>
-        <div onClick={() => setSearchParams({type: "rugged"})} className={styles.filter}>rugged</div>
-        <div onClick={() => setSearchParams({})} className={styles.clear}>Clear filters</div>
+        <div onClick={() => setSearchParams({type: "simple"})} className={filterClassName("simple")}>simple</div>
+        <div onClick={() => setSearchParams({type: "luxury"})} className={filterClassName("luxury")}>luxury</div>
+        <div onClick={() => setSearchParams({type: "rugged"})} className={filterClassName("rugged")}>rugged</div>
+        {typeFilter && <div onClick={() => setSearchParams({})} className={styles.clear}>Clear filters</div>}
       </div>
       <ul className={styles.vans_list}>{vansList}</ul>
     </div>

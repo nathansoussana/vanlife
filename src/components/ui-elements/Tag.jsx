@@ -5,5 +5,5 @@ export default function Tag({ name }) {
     <div className={`${styles.tag} ${styles[name]}`}>
       {name}
     </div>
-  );
+  )
 }
