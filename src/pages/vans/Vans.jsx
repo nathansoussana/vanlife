@@ -20,7 +20,7 @@ export default function Vans() {
 
   const vansList = vansDataFiltered.map(van =>
       <li key={van.id} className={styles.van_item}>
-        <Link to={van.id}>
+        <Link to={van.id} state={{ search: searchParams.toString() }}>
           <img src={van.imageUrl} alt={van.name} className={styles.van_img} />
           <h5 className={styles.van_name}>{van.name}</h5>
           <p className={styles.van_price}>${van.price}/day</p>
