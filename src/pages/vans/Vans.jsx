@@ -48,7 +48,15 @@ export default function Vans() {
   if (loading) {
     return (
       <div className={styles.content_container}>
-        <h2>Loading...</h2> 
+        <h2 aria-live="polite">Loading...</h2> 
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className={styles.content_container}>
+        <h2 aria-live="assertive">There was an error: {error.message}.</h2> 
       </div>
     )
   }
