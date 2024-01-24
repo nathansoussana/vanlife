@@ -1,19 +1,31 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { getVans } from '../../../api.js'
 import Tag from '../../components/ui-elements/Tag'
 import styles from './Vans.module.sass'
 import tagStyles from '../../components/ui-elements/Tag.module.sass'
 
 export default function Vans() {
   const [vansData, setVansData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.get("type")
 
   useEffect(() => {
-    fetch("/api/vans")
-      .then(res => res.json())
-      .then(data => setVansData(data.vans))
+    async function loadVans() {
+      setLoading(true)
+      try {
+        const data = await getVans()
+        setVansData(data)
+      } catch(err) {
+        setError(err)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadVans()
   }, [])
 
   const vansDataFiltered = typeFilter ? vansData.filter(van => van.type === typeFilter) : vansData
@@ -31,6 +43,14 @@ export default function Vans() {
 
   function filterClassName(vanType) { 
     return `${styles.filter} ${typeFilter === vanType ? tagStyles[vanType] : null}`
+  }
+
+  if (loading) {
+    return (
+      <div className={styles.content_container}>
+        <h2>Loading...</h2> 
+      </div>
+    )
   }
 
   return (
