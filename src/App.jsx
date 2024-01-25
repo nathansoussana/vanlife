@@ -12,9 +12,10 @@ import HostVanPricing from './pages/host/HostVanPricing.jsx'
 import HostVanPhotos from './pages/host/HostVanPhotos.jsx'
 import Reviews from './pages/host/Reviews.jsx'
 import About from './pages/About.jsx'
-import Vans from './pages/vans/Vans.jsx'
+import Vans, { loader as vansLoader } from './pages/vans/Vans.jsx'
 import VanDetail from './pages/vans/VanDetail.jsx'
 import Error from './pages/Error'
+import LoadingError from './pages/LoadingError'
 import '../server.js'
 
 export default function App() {
@@ -25,14 +26,14 @@ export default function App() {
       {/* About */}
       <Route path="about" element={<About />} />
       {/* Vans listing */}
-      <Route path="vans" element={<Vans />} />
+      <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetail />} />
       {/* Host section */}
       <Route path="host" element={<HostLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="income" element={<Income />} />
         <Route path="reviews" element={<Reviews />} />
-        <Route path="vans" element={<HostVans />} />
+        <Route path="vans" element={<HostVans />} errorElement={<LoadingError />} />
         {/* Host van details */}
         <Route path="vans/:id" element={<HostVanDetails />}>
           <Route index element={<HostVanInfo />} />

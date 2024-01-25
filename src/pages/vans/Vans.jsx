@@ -1,36 +1,24 @@
-import { useEffect, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useSearchParams, useLoaderData } from 'react-router-dom'
 import { getVans } from '../../../api.js'
 import Tag from '../../components/ui-elements/Tag'
 import styles from './Vans.module.sass'
 import tagStyles from '../../components/ui-elements/Tag.module.sass'
 
+export function loader() {
+  return getVans()
+}
+
 export default function Vans() {
-  const [vansData, setVansData] = useState([])
-  const [loading, setLoading] = useState(false)
+  const vans = useLoaderData()
   const [error, setError] = useState(null)
 
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.get("type")
 
-  useEffect(() => {
-    async function loadVans() {
-      setLoading(true)
-      try {
-        const data = await getVans()
-        setVansData(data)
-      } catch(err) {
-        setError(err)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadVans()
-  }, [])
+  const vansFiltered = typeFilter ? vans.filter(van => van.type === typeFilter) : vans
 
-  const vansDataFiltered = typeFilter ? vansData.filter(van => van.type === typeFilter) : vansData
-
-  const vansList = vansDataFiltered.map(van =>
+  const vansList = vansFiltered.map(van =>
       <li key={van.id} className={styles.van_item}>
         <Link to={van.id} state={{ search: searchParams.toString() }}>
           <img src={van.imageUrl} alt={van.name} className={styles.van_img} />
@@ -43,14 +31,6 @@ export default function Vans() {
 
   function filterClassName(vanType) { 
     return `${styles.filter} ${typeFilter === vanType ? tagStyles[vanType] : null}`
-  }
-
-  if (loading) {
-    return (
-      <div className={styles.content_container}>
-        <h2 aria-live="polite">Loading...</h2> 
-      </div>
-    )
   }
 
   if (error) {
