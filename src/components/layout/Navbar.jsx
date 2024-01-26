@@ -17,6 +17,9 @@ export default function Navbar() {
         <NavLink to="host" className={active}>Host</NavLink>
         <NavLink to="about" className={active}>About</NavLink>
         <NavLink to="vans" className={active}>Vans</NavLink>     
+        <Link to="login" className={styles.login}>
+          <img src="login.png" alt="Log in" />  
+        </Link>     
       </div>
       
     </nav> 

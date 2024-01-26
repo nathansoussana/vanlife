@@ -14,6 +14,7 @@ import Reviews from './pages/host/Reviews.jsx'
 import About from './pages/About.jsx'
 import Vans, { loader as vansLoader } from './pages/vans/Vans.jsx'
 import VanDetail from './pages/vans/VanDetail.jsx'
+import Login from './pages/Login.jsx'
 import Error from './pages/Error'
 import LoadingError from './pages/LoadingError'
 import '../server.js'
@@ -28,6 +29,8 @@ export default function App() {
       {/* Vans listing */}
       <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetail />} />
+      {/* Log in */}
+      <Route path="login" element={<Login /> }/>
       {/* Host section */}
       <Route path="host" element={<HostLayout />}>
         <Route index element={<Dashboard />} />
